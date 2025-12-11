@@ -1,3 +1,4 @@
+import os
 import telebot
 import random
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -7,8 +8,8 @@ from google.genai.errors import APIError
 # --------------------------
 # 1. الإعدادات والمفاتيح (لازم تغير السطرين دول)
 # --------------------------
-BOT_TOKEN = '8585706945:AAGaukgB6vMQWrjFFTvI-RI34yym5oMU4Sw' 
-GEMINI_API_KEY = 'AIzaSyBbkfiKi11NmGqp8IC-qE_FZg24jpmPGTo' 
+BOT_TOKEN = os.environ.get('BOT_TOKEN') 
+GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
@@ -69,4 +70,5 @@ def handle_ai_query(message):
 # --------------------------
 # 7. تشغيل البوت
 # --------------------------
+
 # bot.infinity_polling() # شغل الدالة دي في النهاية زي ما عملنا قبل كده
