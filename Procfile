@@ -1,0 +1,1 @@
+web: python zad_muslim_bot.py
